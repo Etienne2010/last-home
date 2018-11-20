@@ -6,10 +6,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @spot = booking_params[:spot]
+    p params
+    @spot = Spot.find(params[:spot_id])
     bkg = Booking.new(user: current_user, spot: @spot)
     if bkg.save
-      redirect_to spot_booking_path(bkg)
+      redirect_to spot_booking_path(@spot, bkg)
     else
       redirect_to spot_path(@spot)
     end
@@ -22,6 +23,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:spot)
+    params.require(:spot).permit(:user, :id)
   end
 end
