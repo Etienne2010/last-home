@@ -22,6 +22,13 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @spot = Spot.find(params[:id])
+    @booking = Booking.new
+  end
+
+  def destroy
+    @spot = Spot.find(params[:id])
+    @spot.destroy
   end
 
   private

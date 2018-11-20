@@ -1,20 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 <div class="banner" style="background-image: url(<%= image_path('banner.jpg') %>)">
   <div class="banner-content">
     <h1>Last home</h1>
-    <p>A spot for eternity</p>
-  </div>
-</div>
-<%= link_to 'Update profile', edit_user_registration_path, class: "btn btn-success" if user_signed_in? %>
-<%= link_to 'Add spot', new_spot_path, class: "btn btn-success" if user_signed_in? %>
-<form action='/index' method='post'>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name='search_content' placeholder='Occupation'>
-  <select id="good_evil" name="good_or_evil">
-    <option value="Good">Good</option>
-    <option value="Evil">Evil</option>
-  </select>
-  <input type="submit" value="Search">
-</form>
+    <p class="home-title">A spot for eternity</p>
+      <div class="card">
+        <h2 class="fylh"> Find your last home: </h2>
+        <p class="fylhp"> Chose your neighbour for the eternity</p>
+       <form action='/index' method='post'>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
+        <input type="text" name='search_content' placeholder='Occupation' class="contentsearch">
+        <select class="goodev" id="good_evil" name="good_or_evil">
+          <option value="Good">Good</option>
+          <option value="Evil">Evil</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Search" class="btn btn-primary btnsearch">
+        </form>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
