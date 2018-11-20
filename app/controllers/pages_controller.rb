@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     p params[:good_or_evil]
     p params[:search_content]
     good_or_evil = params[:good_or_evil] == "Good"
-    if !params[:search_content].nil?
+    if params[:search_content] != ""
       @spots = Spot.where("occupation LIKE '%#{params[:search_content]}%'")
     end
     if !params[:good_or_evil].nil?
@@ -18,5 +18,4 @@ class PagesController < ApplicationController
     end
     p @spots
   end
-
 end

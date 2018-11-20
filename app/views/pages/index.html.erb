@@ -1,14 +1,33 @@
+<h1>Spots Available</h1>
+<!--
 <% @spots.each do |spot| %>
 <div>
   <div>
     <%= spot.user.name %>
   </div>
-  <div><%= spot.occupation %></div>
-  <div><%= spot.good %></div>
-  <div><%= spot.guest_number %></div>
-  <div><%= spot.price %></div>
+  <div> Occupation : <%= spot.occupation %></div>
+  <div> Good or Evil : <%= spot.good %></div>
+  <div> Quest Number : <%= spot.guest_number %></div>
+  <div> Price : <%= spot.price %></div>
   <img src="<%= image_path(spot.image) %>" alt="Image">
   <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
 
 </div>
 <% end %>
+ -->
+<div class="container">
+  <div class="row">
+    <% @spots.each do |spot| %>
+      <div class="col-md-4">
+        <div class="card" style="background-image: url(<%= image_path(spot.image) %>" alt="Image">
+          <div> Occupation : <%= spot.occupation %></div>
+          <div> Good or Evil : <%= spot.good %></div>
+          <div> Quest Number : <%= spot.guest_number %></div>
+          <div> Price : <%= spot.price %></div>
+          <img  src="<%= image_path(spot.user.avatar) %>" class="avatar" alt="Image">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
