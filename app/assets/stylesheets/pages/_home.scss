@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+.card {
+  width: 350px;
+  height: 400px;
+  margin: 30px;
+  background-color: white;
+  position: absolute;
+  left: 10px;
+  top:150px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px;
+}
+ .fylh {
+  color:black;
+  font-size:28px;
+ }
+
+.fylhp {
+  color:black !important;
+  font-size:20px !important;
+}
+
+ .goodev {
+  height: 40px;
+  background-color:$blue;
+  color:white;
+ }
+ .btnsearch {
+  height:40px;
+  width: 85%;
+  background-color:$blue;
+ }
+
+.contentsearch {
+  height: 40px;
+  color: black;
+  border-radius:5px;
+}
+.home-title {
+  font-size:38px !important;
+  color: black !important;
+}

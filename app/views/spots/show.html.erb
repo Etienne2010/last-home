@@ -1,0 +1,7 @@
+  <div><%= @spot.occupation %></div>
+  <div><%= @spot.good %></div>
+  <div><%= @spot.guest_number %></div>
+  <div><%= @spot.price %></div>
+<%= simple_form_for [@spot, @booking] do |f| %>
+<%= f.submit 'Book' %>
+<% end %>
