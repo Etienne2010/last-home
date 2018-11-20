@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
   def edit
-    p current_user
     @user = current_user
+  end
+
+  def profile
+    @user = current_user
+    p @user
+    p @user.avatar
   end
 
   def update
