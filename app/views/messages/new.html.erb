@@ -1,0 +1,6 @@
+<%= simple_form_for [@booking, @spot, @msg] do |f| %>
+To: <%= @spot.user_id.name %>
+From: <%= @booking.user_id.name %>
+<%= f.input :content %>
+<%= f.submit :send_message %>
+<% end %>

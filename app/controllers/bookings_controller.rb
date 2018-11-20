@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    p params
     @spot = Spot.find(params[:spot_id])
     bkg = Booking.new(user: current_user, spot: @spot)
     if bkg.save
