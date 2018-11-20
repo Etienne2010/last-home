@@ -1,14 +1,20 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<div class="banner">
+<div class="banner" style="background-image: url(<%= image_path('banner.jpg') %>)">
   <div class="banner-content">
     <h1>Last home</h1>
     <p>A spot for eternity</p>
   </div>
-  <div>
-    <form action='/index' method='post'>
-      <input type="submit" value="Search">
-    </form>
-  </div>
 </div>
-<%= link_to 'Update profile', user_edit_profile_path, class: "btn btn-success" if user_signed_in? %>
+<%= link_to 'Update profile', edit_user_registration_path, class: "btn btn-success" if user_signed_in? %>
+<%= link_to 'Add spot', new_spot_path, class: "btn btn-success" if user_signed_in? %>
+<form action='/index' method='post'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name='search_content' placeholder='Occupation'>
+  <select id="good_evil" name="good_or_evil">
+    <option value="Good">Good</option>
+    <option value="Evil">Evil</option>
+  </select>
+  <input type="submit" value="Search">
+</form>
+

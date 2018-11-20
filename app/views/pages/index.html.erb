@@ -1,0 +1,14 @@
+<% @spots.each do |spot| %>
+<div>
+  <div>
+    <%= spot.user.name %>
+  </div>
+  <div><%= spot.occupation %></div>
+  <div><%= spot.good %></div>
+  <div><%= spot.guest_number %></div>
+  <div><%= spot.price %></div>
+  <img src="<%= image_path(spot.image) %>" alt="Image">
+  <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
+
+</div>
+<% end %>
