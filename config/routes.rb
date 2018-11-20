@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   # get 'user/edit_profile', to: "users#edit"
+
   #patch '/user/update', to: 'users#update', as: :user
   post '/index', to: 'pages#index'
   get '/profile', to: 'users#profile', as: :profile
