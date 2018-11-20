@@ -6,8 +6,18 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    p @user
-    p @user.avatar
+    @spot = Spot.where("user_id=?", current_user.id)
+    if @spot != []
+      @booking = find_booking_from_owner(@spot)
+    else
+      @booking = Booking.where("user_id=?", current_user.id)
+      @spot = @booking.spot_id
+    end
+  end
+
+
+  def find_booking_from_owner
+    @booking = Booking.where("spot_id=?", @spot.id)
   end
 
   def update

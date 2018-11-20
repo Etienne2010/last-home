@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_094831) do
+ActiveRecord::Schema.define(version: 2018_11_20_164957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 2018_11_20_094831) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.text "description"
     t.float "price"
@@ -34,6 +53,8 @@ ActiveRecord::Schema.define(version: 2018_11_20_094831) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "occupation", default: ""
+    t.bigint "review_id"
+    t.index ["review_id"], name: "index_spots_on_review_id"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
@@ -54,5 +75,9 @@ ActiveRecord::Schema.define(version: 2018_11_20_094831) do
 
   add_foreign_key "bookings", "spots"
   add_foreign_key "bookings", "users"
+  add_foreign_key "messages", "users", column: "receiver_id"
+  add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "spots", "reviews"
   add_foreign_key "spots", "users"
 end
