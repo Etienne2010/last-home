@@ -9,6 +9,6 @@
   <div><%= spot.price %></div>
   <img src="<%= image_path(spot.image) %>" alt="Image">
   <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
-
+  <%= link_to "Book this spot", spot_path(spot) %>
 </div>
 <% end %>
