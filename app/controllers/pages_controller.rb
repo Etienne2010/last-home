@@ -21,5 +21,4 @@ class PagesController < ApplicationController
       @spots = Spot.where("occupation LIKE '%#{params[:search_content]}%' AND good=?", good_or_evil)
     end
   end
-
 end
