@@ -13,7 +13,6 @@
   <div> Price : <%= spot.price %></div>
   <img src="<%= image_path(spot.image) %>" alt="Image">
   <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
-  <%= link_to "Book this spot", spot_path(spot) %>
 </div>
 <% end %>
  -->
@@ -88,7 +87,7 @@
               <div><%= spot.good %></div>
             </div>
             <img class="card-user avatar avatar-large" src="<%= image_path(spot.user.avatar) %>">
-            <a class="card-link" href="#" ></a>
+            <%= link_to "Book this spot", spot_path(spot), class: "card-link" %>
           </div>
           <div class="card-footer">
             <p>Posted on 22/11/19</p>
