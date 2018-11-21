@@ -22,6 +22,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
     @spot = Spot.find(params[:id])
     @booking = Booking.new
   end

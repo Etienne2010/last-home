@@ -1,5 +1,6 @@
 
-  <div class="showcard" style= "background-image: url(<%= image_path(@spot.image) %>)">
+  <!-- <div class="showcard" style= "background-image: url(<%= image_path(@spot.image) %>)"> -->
+<div class="showcard" style= "background-image: url(<%= "#{@base_url}#{@spot.image}" %>)">
   <div class="spotname"><%= @spot.user.name %></div>
   <div class="spotdescription"><h1>"<%= @spot.description %>"</h1></div>
   <div class="spotoccupation"><%= @spot.occupation %></div>
