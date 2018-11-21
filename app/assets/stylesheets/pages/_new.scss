@@ -1,3 +1,4 @@
+// addspot
 .form{
   background-image:url(nuage.jpeg);
   background-attachment:fixed;
@@ -17,3 +18,34 @@
 .form input{
   color:black;
 }
+
+// log in
+.form_login{
+  background-image:url(nuage.jpeg);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-size:cover;
+  display:flex;
+  justify-content:space-between;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_login label {
+  color:white;
+}
+
+.form_login input {
+  color:black;
+}
+
+.form_login a {
+  color:black;
+  padding-left: 20px;
+  text-decoration:none;
+}
+.form_login a:hover{
+  color:white;
+}
+
