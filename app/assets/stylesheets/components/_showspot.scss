@@ -1,0 +1,36 @@
+.showcard {
+
+  height: 800px;
+  background-size: cover;
+  opacity: 0,3;
+  position: relative;
+}
+
+.spotavatar {
+  position: absolute;
+  right: 15px;
+  top:15px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+ .spotname {
+  color:white;
+  font-size: 60px;
+  font-style: bold;
+  position: absolute;
+  top:15px;
+  left: 15px;
+ }
+.spotdescription {
+  color:white;
+  font-size:40px;
+  position:absolute;
+  top: 400px;
+  right:50%;
+}
+.book {
+  position:absolute;
+  right:50%;
+  top:500px;
+}
