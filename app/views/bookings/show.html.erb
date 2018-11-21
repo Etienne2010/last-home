@@ -1,0 +1,7 @@
+<h3>Booking</h3>
+<%= @booking.spot.user.name %>
+<%= @booking.spot.description %>
+<%= @booking.spot.price %>
+<img src=<%= "#{@base_url}#{@booking.spot.image}" %>>
+<img src=<%= "#{@base_url}#{@booking.spot.user.avatar}" %>>
+<%= link_to "Back to spots", index_path, method: :post %>

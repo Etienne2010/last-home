@@ -1,0 +1,22 @@
+
+  <div class="showcard" style= "background-image: url(<%= image_path(@spot.image) %>)">
+    <div> <%= image_tag(@spot.user.avatar, :class =>"spotavatar") %></div>
+      <div class="spotname"><%= @spot.user.name %></div>
+      <br>
+      <div class="spotoccupation"><h2><%= @spot.occupation %></h2></div>
+      <br>
+    <div class="card menu">
+      <ul>
+        <lo><div class="spotdescription"><h2>"<%= @spot.description %>"</h2></div></lo>
+   <!--    <div class="spotgood"><%= @spot.good %></div> -->
+      <lo><div class="gestnum"><p> Aviable places :<%= @spot.guest_number %></p><lo></div>
+      <lo><div class="price"><h3>Special price $ : <%= @spot.price %></h3></div></lo>
+      <br>
+      <lo><%= simple_form_for [@spot, @booking] do |f| %>
+        <%= f.submit class: 'btn btn-primary book' %>
+      <% end %></lo>
+    </ul>
+    </div>
+  </div>
+
+

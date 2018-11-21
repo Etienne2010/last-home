@@ -1,0 +1,56 @@
+
+.showcard {
+  height: 800px;
+  background-size: cover;
+  position: relative;
+  opacity: 0,3;
+}
+.spotavatar {
+  position: absolute;
+  right: 30px;
+  top:95px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+ .spotname {
+  color:white;
+  font-size: 60px;
+  font-style: bold;
+  position: absolute;
+  top:85px;
+  left: 15px;
+ }
+ .menu {
+  width: 350px;
+  height: 450px;
+  margin: 10px;
+  background-color: white;
+  position: absolute;
+  left: 10px;
+  top:250px !important;
+  border-radius: 30px;
+  align-items: center;
+  padding: 10px;
+}
+.spotdescription {
+  color:#cecccc;
+  font-size:40px;
+}
+.book {
+ width: 230px;
+}
+.price {
+  color:black;
+}
+.gestnum {
+  color: black;
+}
+.spotoccupation {
+color:white;
+  font-size: 30px;
+  font-style: bold;
+  position: absolute;
+  top:150px;
+  left: 25px;
+}

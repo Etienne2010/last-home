@@ -1,8 +1,23 @@
 class UsersController < ApplicationController
 
   def edit
-    p current_user
     @user = current_user
+  end
+
+  def profile
+    @user = current_user
+    @spot = Spot.where("user_id=?", current_user.id)
+    if @spot != []
+      @booking = find_booking_from_owner(@spot)
+    else
+      @booking = Booking.where("user_id=?", current_user.id)
+      @spot = @booking.spot_id
+    end
+  end
+
+
+  def find_booking_from_owner
+    @booking = Booking.where("spot_id=?", @spot.id)
   end
 
   def update
@@ -16,8 +31,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
     @user = User.find(params[:id])
   end
+
 
   private
 
