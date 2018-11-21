@@ -3,13 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @spots = Spot.all
-    @spots.each do |spot|
-      p spot.image
-      p spot.user.avatar
-    end
   end
 
   def index
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
     good_or_evil = params[:good_or_evil] == "Good"
     if params[:search_content] != ""
       @spots = Spot.where("occupation LIKE '%#{params[:search_content]}%'")
