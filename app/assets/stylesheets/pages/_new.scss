@@ -1,0 +1,19 @@
+.form{
+  background-image:url(nuage.jpeg);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-size:cover;
+  display:flex;
+  justify-content:space-between;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.form label{
+  color:white;
+}
+
+.form input{
+  color:black;
+}
