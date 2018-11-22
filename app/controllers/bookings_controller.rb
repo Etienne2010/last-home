@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/uploads"
     @user = current_user
     @bookings = Booking.where("user_id=?", @user.id)
   end
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/uploads"
     @booking = Booking.find(params[:id])
   end
 

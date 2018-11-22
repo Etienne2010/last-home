@@ -15,7 +15,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(new_params)
     @spot.user = current_user
     if @spot.save
-      redirect_to spots_path(@spot)
+      redirect_to spot_path(@spot)
     else
       render :new
     end

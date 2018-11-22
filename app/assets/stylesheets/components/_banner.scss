@@ -2,8 +2,7 @@
   // background-image: url(banner.jpg);
   color: white;
   text-align: center;
-  height: calc(100vh - 70px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  height: calc(100vh);
   background-size: cover !important;
   display: flex;
   align-items: center;

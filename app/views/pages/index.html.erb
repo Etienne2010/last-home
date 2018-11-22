@@ -1,16 +1,25 @@
 <%
   if params['good_or_evil'] == "Good"
     background_path = image_path("good")
+    content_good = "WELCOME TO PARADISE"
+    content_text = "There is a place for everyone"
   else
     background_path = image_path("evil")
+    content_good = "WELCOME TO HELL"
+    content_text = "Hurry up there will not be enough room"
   end
 %>
 
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= background_path %>');">
   <div class="banner-content">
-    <h1>WELCOME TO HELL</h1>
-    <p>hurry up there is not much room left</p>
+    <% if params['good_or_evil'] == "Good" %>
+    <h1><%= "#{content_good}" %></h1>
+    <p><%= "#{content_text}" %></p>
+    <% else %>
+    <h1><%= "#{content_good}" %></h1>
+    <p><%= "#{content_text}" %></p>
+    <% end  %>
   </div>
 </div>
 
