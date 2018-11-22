@@ -1,8 +1,8 @@
 <%
   if params['good_or_evil'] == "Good"
-    background_path = image_path("good")
+    background_path = "#{@base_url}good"
   else
-    background_path = image_path("evil")
+    background_path = "#{@base_url}evil"
   end
 %>
 
