@@ -1,92 +1,23 @@
 
-<!--
-<div class="banner" style="background-image: url(<%= image_path('enfer.jpg') %>)"> -->
-<!--
-<% @spots.each do |spot| %>
-<div>
-  <div>
-    <%= spot.user.name %>
-  </div>
-  <div> Occupation : <%= spot.occupation %></div>
-  <div> Good or Evil : <%= spot.good %></div>
-  <div> Quest Number : <%= spot.guest_number %></div>
-  <div> Price : <%= spot.price %></div>
-  <img src="<%= image_path(spot.image) %>" alt="Image">
-  <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
-</div>
-<% end %>
- -->
-
-
-
 
 <div class="banner" style="background-image: url(<%= "#{@base_url}enfer.jpg" %>)">
       <div class="banner-content">
         <h1>WELCOME TO HELL</h1>
         <p>Hurry Up there is not much room left</p>
       </div>
-    </div>
-
-<!--     <div class="container">
-  <div class="row">
-    <% @spots.each do |spot| %>
-      <div class="col-md-4">
-        <div class="card" style="background-image: url(<%= image_path(spot.image) %>" alt="Image">
-          <div> Occupation : <%= spot.occupation %></div>
-          <div> Price : <%= spot.price %></div>
-          <img  src="<%= image_path(spot.user.avatar) %>" class="avatar" alt="Image">
-        </div>
-        <a class="card-link" href="#"></a>
-      </div>
-    <% end %>
-  </div>
-</div> -->
-
-<!--     <div class="container">
-  <div class="row">
-    <% @spots.each do |spot| %>
-      <div class="col-md-6">
-        <div class="card" style="background-image: url(<%= image_path(spot.image) %>" alt="Image">
-          <div> Occupation : <%= spot.occupation %></div>
-          <div> Good or Evil : <%= spot.good %></div>
-          <div> Quest Number : <%= spot.guest_number %></div>
-          <div> Price : <%= spot.price %></div>
-          <img  src="<%= image_path(spot.user.avatar) %>" class="card-user avatar avatar-large" alt="Image">
-        </div>
-      </div>
-    <% end %>
-    <div class="card-description">
-            </div>
-            <a class="card-link" href="#" ></a>
-  </div>
-</body> -->
-
-<!-- <div class="container">
-  <div class="row">
-    <% @spots.each do |spot| %>
-    <div class="col-md-6">
-      <div class="card" style="background-image: url(<%= image_path(spot.image) %>" alt="Image">
-          <div> Occupation : <%= spot.occupation %></div>
-          <div> Good or Evil : <%= spot.good %></div>
-          <div> Quest Number : <%= spot.guest_number %></div>
-          <div> Price : <%= spot.price %></div>
-          <img  src="<%= image_path(spot.user.avatar) %>" class="card-user avatar avatar-large" alt="Image">
-        </div>
-      <% end %>
-    </div>
- -->
+</div>
 
     <div class="container">
       <% @spots.each do |spot| %>
       <div class="cards">
         <div class="card">
           <div class="col-md-12">
-          <div class="card-body" style="background-image: url(<%= image_path(spot.image) %>" alt="Image">
+          <div class="card-body" style="background-image: url(<%= spot.photo.url %>" alt="Image">
             <span class="card-category"><div><%= spot.occupation %></div></span>
             <div class="card-description">
               <div><%= spot.good %></div>
             </div>
-            <img class="card-user avatar avatar-large" src="<%= image_path(spot.user.avatar) %>">
+            <img class="card-user avatar avatar-large" src=<%= "#{@base_url}#{spot.user.avatar}" %>>
             <%= link_to "Book this spot", spot_path(spot), class: "card-link" %>
           </div>
           <div class="card-footer">
