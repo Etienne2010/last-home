@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     end
   end
   resources :reviews
-  resources :bookings, only: [:show, :edit, :upadate, :destroy]
+
+  resources :bookings, only: [:show, :edit, :update, :destroy]
+
 
   # get 'user/edit_profile', to: "users#edit"
 

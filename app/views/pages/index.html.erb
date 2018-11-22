@@ -1,5 +1,6 @@
 <%
   if params['good_or_evil'] == "Good"
+
     background_path = image_path("good")
     content_good = "WELCOME TO PARADISE"
     content_text = "There is a place for everyone"
@@ -7,6 +8,11 @@
     background_path = image_path("evil")
     content_good = "WELCOME TO HELL"
     content_text = "Hurry up there will not be enough room"
+
+    background_path = "#{@base_url}good"
+  else
+    background_path = "#{@base_url}evil"
+
   end
 %>
 
@@ -27,7 +33,7 @@
   <div class="row">
     <% @spots.each do |spot| %>
       <div class="col-md-4">
-        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "#{@base_url}#{spot.image}" %>)">
+        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= spot.photo.url %>)">
           <div class="card-category"><%= spot.user.name %></div>
           <div class="card-description">
             <h2>Occupation : <%= spot.occupation %></h2>
@@ -40,6 +46,4 @@
     <% end %>
   </div>
 </div>
-
-
 
