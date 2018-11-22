@@ -1,33 +1,34 @@
+<%
+  if params['good_or_evil'] == "Good"
+    background_path = image_path("good")
+  else
+    background_path = image_path("evil")
+  end
+%>
 
 
-<div class="banner" style="background-image: url(<%= "#{@base_url}enfer.jpg" %>)">
-      <div class="banner-content">
-        <h1>WELCOME TO HELL</h1>
-        <p>Hurry Up there is not much room left</p>
-      </div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= background_path %>');">
+  <div class="banner-content">
+    <h1>WELCOME TO HELL</h1>
+    <p>hurry up there is not much room left</p>
+  </div>
 </div>
 
-    <div class="container">
-      <% @spots.each do |spot| %>
-      <div class="cards">
-        <div class="card">
-          <div class="col-md-12">
-          <div class="card-body" style="background-image: url(<%= spot.photo.url %>" alt="Image">
-            <span class="card-category"><div><%= spot.occupation %></div></span>
-            <div class="card-description">
-              <div><%= spot.good %></div>
-            </div>
-            <img class="card-user avatar avatar-large" src=<%= "#{@base_url}#{spot.user.avatar}" %>>
-            <%= link_to "Book this spot", spot_path(spot), class: "card-link" %>
+<div class="container">
+  <div class="row">
+    <% @spots.each do |spot| %>
+      <div class="col-md-4">
+        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= spot.photo.url %>)">
+          <div class="card-category"><%= spot.user.name %></div>
+          <div class="card-description">
+            <h2>Occupation : <%= spot.occupation %></h2>
+            <p>Price : <%= spot.price %></p>
           </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a></li>
-              <a href="#"><i class="fa fa-heart"></i></a></li>
-              <a href="#"><i class="fa fa-share"></i></a></li>
-            </div>
-          </div>
-          </div>
-          <% end %>
+          <img class="card-user" src="<%= "#{@base_url}#{spot.user.avatar}" %>" alt="Image">
+          <%= link_to "toto", spot_path(spot), class: "card-link" %>
         </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
