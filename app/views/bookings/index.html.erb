@@ -1,20 +1,27 @@
-<h3>Your bookings</h3>
-<div>
+
+<%
+ if params['good_or_evil'] == "Good"
+   background_path = image_path("good")
+ else
+   background_path = image_path("evil")
+ end
+%>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= background_path %>');">
   <% @bookings.each do |booking| %>
     <img src=<%= booking.spot.photo.url %>>
-    <img src=<%= "#{@base_url}#{booking.spot.user.avatar}" %>>
-      <div>
-        <%= booking.user.name %>
+    <h3 class="yourbookingtitle">Your booking</h3>
+    <div>
+      <img class="avatarbooking"  src=<%= "#{@base_url}#{booking.spot.user.avatar}" %> >
+    </div>
+      <div class="usernamebook">
+        <h4> Hello <strong><%= booking.user.name %></strong>, pleased to introduce you to your last friend,<strong> <%= booking.spot.user.name %></strong>.<br> Hope you will spend good time together for the eternity..</h4>
       </div>
-      <div>
-        <%= booking.spot.user.name %>
-      </div>
-      <div>
+      <div class="spotdescr">
         <%= booking.spot.description %>
       </div>
-      <div>
-      <%= link_to "delete", booking_path(booking), method: :delete %>
+      <div class="deletespot">
+      <p> Don't want to stay anymore with <strong> <%= booking.spot.user.name %></strong> ?, click here : <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete %></p>
       </div>
     <% end %>
 </div>
-<%= link_to "Back to spots", index_path %>
+
