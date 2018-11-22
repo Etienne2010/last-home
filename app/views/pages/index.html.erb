@@ -18,7 +18,7 @@
   <div class="row">
     <% @spots.each do |spot| %>
       <div class="col-md-4">
-        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "#{@base_url}#{spot.image}" %>)">
+        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= spot.photo.url %>)">
           <div class="card-category"><%= spot.user.name %></div>
           <div class="card-description">
             <h2>Occupation : <%= spot.occupation %></h2>
@@ -31,6 +31,4 @@
     <% end %>
   </div>
 </div>
-
-
 
