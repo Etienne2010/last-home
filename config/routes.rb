@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   #patch '/user/update', to: 'users#update', as: :user
-  post '/index', to: 'pages#index'
+  get '/index', to: 'pages#index'
   get '/profile', to: 'users#profile', as: :profile
 
   # get '/spot/new', to: 'spots#new', as: :new_spot

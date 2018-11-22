@@ -1,43 +1,36 @@
+<%
+  if params['good_or_evil'] == "Good"
+    background_path = image_path("good")
+  else
+    background_path = image_path("evil")
+  end
+%>
 
-<!--
-<% @spots.each do |spot| %>
-<div>
-  <div>
-    <%= spot.user.name %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= background_path %>');">
+  <div class="banner-content">
+    <h1>WELCOME TO HELL</h1>
+    <p>hurry up there is not much room left</p>
   </div>
-  <div> Occupation : <%= spot.occupation %></div>
-  <div> Good or Evil : <%= spot.good %></div>
-  <div> Quest Number : <%= spot.guest_number %></div>
-  <div> Price : <%= spot.price %></div>
-  <img src="<%= image_path(spot.image) %>" alt="Image">
-  <img src="<%= image_path(spot.user.avatar) %>" alt="Image">
-
 </div>
-<% end %>
- -->
 
-     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://5b0988e595225.cdn.sohucs.com/images/20180815/34ad7b3fc3fc42ba90a5a486cee00db3.jpeg');">
-      <div class="banner-content">
-        <h1>WELCOME TO HELL</h1>
-        <p>hurry up there is not much room left</p>
+<div class="container">
+  <div class="row">
+    <% @spots.each do |spot| %>
+      <div class="col-md-4">
+        <div class="card-spot" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "#{@base_url}#{spot.image}" %>)">
+          <div class="card-category"><%= spot.user.name %></div>
+          <div class="card-description">
+            <h2>Occupation : <%= spot.occupation %></h2>
+            <p>Price : <%= spot.price %></p>
+          </div>
+          <img class="card-user" src="<%= "#{@base_url}#{spot.user.avatar}" %>" alt="Image">
+          <%= link_to "toto", spot_path(spot), class: "card-link" %>
+        </div>
       </div>
-    </div>
-
-
-<h2><strong>A place for eternity ?</strong></h2>
-
-<div class = "cards">
-
-<% @spots.each do |spot| %>
-<div class="card" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(spot.image) %>)">
-  <div class="card-category"><%= spot.user.name %></div>
-  <div class="card-description">
-    <h2>Occupation : <%= spot.occupation %></h2>
-    <p>Price : <%= spot.price %></p>
+    <% end %>
   </div>
-  <img class="card-user" src="<%= image_path(spot.user.avatar) %>" alt="Image">
-  <a class="card-link" href="#" ></a>
 </div>
-<% end %>
-</div>
+
+
 
