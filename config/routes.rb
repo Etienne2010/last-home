@@ -2,17 +2,18 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :spots do
-    resources :bookings do
+    resources :bookings, only: [:create, :new, :show, :index] do
       resources :messages, only: [:new, :create]
     end
   end
   resources :reviews
+  resources :bookings, only: [:show, :edit, :update, :destroy]
 
   # get 'user/edit_profile', to: "users#edit"
 
 
   #patch '/user/update', to: 'users#update', as: :user
-  post '/index', to: 'pages#index'
+  get '/index', to: 'pages#index'
   get '/profile', to: 'users#profile', as: :profile
 
   # get '/spot/new', to: 'spots#new', as: :new_spot

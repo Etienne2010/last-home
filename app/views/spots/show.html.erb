@@ -1,6 +1,6 @@
 
-  <div class="showcard" style= "background-image: url(<%= image_path(@spot.image) %>)">
-    <div> <%= image_tag(@spot.user.avatar, :class =>"spotavatar") %></div>
+  <div class="showcard" style= "background-image: url(<%= @spot.photo.url %>)">
+    <div><img src=<%= @spot.user.avatar %> class="spotavatar"></div>
       <div class="spotname"><%= @spot.user.name %></div>
       <br>
       <div class="spotoccupation"><h2><%= @spot.occupation %></h2></div>
@@ -18,5 +18,6 @@
     </ul>
     </div>
   </div>
+
 
 

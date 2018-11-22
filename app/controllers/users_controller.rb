@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/"
+    @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/uploads/"
     @user = User.find(params[:id])
   end
 
