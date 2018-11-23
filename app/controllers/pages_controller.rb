@@ -8,15 +8,21 @@ class PagesController < ApplicationController
 
   def index
     @base_url = "https://s3.eu-west-3.amazonaws.com/lasthome/uploads/"
+
+    if params[:search_content].present?
+      p "cas 1"
+      p @spots = Spot.where("occupation ILIKE '%#{params[:search_content]}%'")
+    end
+    if params[:good_or_evil].present?
+      p "cas 2"
+      good_or_evil = params[:good_or_evil] == "Good"
+      p @spots = Spot.where("good=?", good_or_evil)
+    end
+    if params[:search_content].present? && params[:good_or_evil].present?
+      p "cas 3"
+      p @spots = Spot.where("occupation ILIKE '%#{params[:search_content]}%' AND good=?", good_or_evil)
+    end
     good_or_evil = params[:good_or_evil] == "Good"
-    if params[:search_content] != ""
-      @spots = Spot.where("occupation ILIKE '%#{params[:search_content]}%'")
-    end
-    if !params[:good_or_evil].nil?
-      @spots = Spot.where("good=?", good_or_evil)
-    end
-    if params[:search_content] != "" && !params[:good_or_evil].nil?
-      @spots = Spot.where("occupation ILIKE '%#{params[:search_content]}%' AND good=?", good_or_evil)
-    end
+    @spots = Spot.where("good=?", good_or_evil)
   end
 end

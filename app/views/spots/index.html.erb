@@ -1,0 +1,10 @@
+<h1>Reviews</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li data-id="<%= review.id %>">
+      <%= link_to review.name, review_path(review) %>
+      <%= link_to "Delete", review_path(review), method: :delete, remote: true %>
+    </li>
+  <% end %>
+</ul>
