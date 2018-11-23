@@ -1,6 +1,6 @@
 // addspot
 .form, .form_login, .form_edit_user {
-  background-image:image_url(nuage.jpeg);
+  background-image:url(nuage.jpeg);
   background-attachment:fixed;
   background-repeat:no-repeat;
   background-size:cover;
@@ -51,7 +51,7 @@
 // edituser
 
 .form_edit_user {
-  background-image:image_url(enfer.jpg);
+  background-image:url(enfer.jpg);
   flex-direction:column;
   color:white;
 }
