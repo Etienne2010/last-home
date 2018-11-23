@@ -1,1 +1,28 @@
-ICI ON MET LA NAVBAR
+<div class="navbar-wagon-right ">
+  <div class= "navbar-wagon-brand">
+    <%= link_to image_tag("logo.png"), root_path   %>
+  </div>
+
+  <div class="navbar-wagon">
+<!-- Right Navigation -->
+    <div class= "navbar-wagon-brand">
+      <%= link_to 'Add spot', new_spot_path if user_signed_in? %>
+      <%= link_to "See your booking", spot_bookings_path(:spot, :booking) if user_signed_in? %>
+    </div>
+
+  <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <!-- <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
+        <img src=<%= current_user.photo.url if user_signed_in? %> class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> <!-- mettre ici le code erb pour la photo de profile -->
+        <!-- </div> -->
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "log in", new_user_session_path %></li>
+          <li><%= link_to "log out", destroy_user_session_path, method: :delete%></li>
+          <li><%= link_to 'Update profile', edit_user_registration_path   if user_signed_in? %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
