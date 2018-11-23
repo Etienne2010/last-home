@@ -5,7 +5,7 @@
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-            <img class="avatar" src=<%= "#{@base_url}/#{@booking.spot.user.avatar}" %>>
+            <img class="avatar" src=<%= @booking.spot.user.photo.url %>>
             <%= console %>
             <h2><%= @booking.spot.user.name %></h2>
             <hr>
@@ -31,17 +31,11 @@
           </div>
           </div>
         <div class="description" >
-          <img class="image_fond" src=<%="#{@base_url}/#{@booking.spot.image}"%>>
+          <img class="image_fond" src=<%= @booking.spot.photo.url %>>
         </div>
       </div>
     </div>
 </body>
 
-<h3>Booking</h3>
-<%= @booking.spot.user.name %>
-<%= @booking.spot.description %>
-<%= @booking.spot.price %>
-<img src=<%= @booking.spot.photo.url %>>
-<img src=<%= @booking.spot.user.photo.url %>>
 <%= link_to "Back to spots", index_path %>
 
