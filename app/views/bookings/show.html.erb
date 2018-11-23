@@ -6,7 +6,6 @@
         <div class="main">
           <div class="main-content">
             <img class="avatar" src=<%= @booking.spot.user.photo.url %>>
-            <%= console %>
             <h2><%= @booking.spot.user.name %></h2>
             <hr>
             <%= link_to "Back to spots", index_path, method: :get %>
