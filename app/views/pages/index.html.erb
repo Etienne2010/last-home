@@ -1,8 +1,8 @@
 <%
   if params['good_or_evil'] == "Good"
-    background_path = "#{@base_url}good"
+    background_path = "#{@base_url}good.jpg"
   else
-    background_path = "#{@base_url}evil"
+    background_path = "#{@base_url}evil.jpg"
   end
 %>
 
@@ -24,7 +24,7 @@
             <h2>Occupation : <%= spot.occupation %></h2>
             <p>Price : <%= spot.price %></p>
           </div>
-          <img class="card-user" src="<%= "#{@base_url}#{spot.user.avatar}" %>" alt="Image">
+          <img class="card-user" src=<%= spot.user.photo.url %> alt="Image">
           <%= link_to "toto", spot_path(spot), class: "card-link" %>
         </div>
       </div>

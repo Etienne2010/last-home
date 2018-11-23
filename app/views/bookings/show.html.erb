@@ -3,5 +3,5 @@
 <%= @booking.spot.description %>
 <%= @booking.spot.price %>
 <img src=<%= @booking.spot.photo.url %>>
-<img src=<%= "#{@base_url}#{@booking.spot.user.avatar}" %>>
+<img src=<%= @booking.spot.user.photo.url %>>
 <%= link_to "Back to spots", index_path %>

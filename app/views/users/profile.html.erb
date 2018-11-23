@@ -1,4 +1,4 @@
-<img src=<%= "#{@base_url}#{@user.avatar}" %>>
+<img src=<%= @user.photo.url %>>
 <%= @user.name %>
 <%= @user.email %>
 <%= link_to "Send message", new_spot_booking_message(@spot, @booking) %>
