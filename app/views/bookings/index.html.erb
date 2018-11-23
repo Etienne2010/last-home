@@ -11,7 +11,7 @@
     <img src=<%= booking.spot.photo.url %>>
     <h3 class="yourbookingtitle">Your booking</h3>
     <div>
-      <img class="avatarbooking"  src=<%= "#{@base_url}#{booking.spot.user.avatar}" %> >
+      <img class="avatarbooking"  src=<%= booking.spot.user.photo.url %> >
     </div>
       <div class="usernamebook">
         <h4> Hello <strong><%= booking.user.name %></strong>, pleased to introduce you to your last friend,<strong> <%= booking.spot.user.name %></strong>.<br> Hope you will spend good time together for the eternity..</h4>
