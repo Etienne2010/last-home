@@ -1,6 +1,6 @@
 // addspot
 .form, .form_login, .form_edit_user {
-  background-image:url(nuage.jpeg);
+  // background-image:url(nuage.jpeg);
   background-attachment:fixed;
   background-repeat:no-repeat;
   background-size:cover;
@@ -12,7 +12,7 @@
 }
 
 .form label {
-  color:white;
+  color:black;
 }
 
 .form input {
@@ -20,7 +20,7 @@
 }
 
 .form_login label {
-  color:white;
+  color:black;
 }
 
 .form_login input {
@@ -28,12 +28,12 @@
 }
 
 .form_login a {
-  color:white;
+  color:black;
   padding-left: 20px;
   text-decoration:none;
 }
 .form_login a:hover {
-  color:white;
+  color:black;
 }
 
 .form_login .btn{
@@ -51,18 +51,18 @@
 // edituser
 
 .form_edit_user {
-  background-image:url(enfer.jpg);
+  // background-image:url(enfer.jpg);
   flex-direction:column;
-  color:white;
+  color:black;
 }
 
 
 .text-muted, a {
-  color:white;
+  color:black;
 }
 
 .form_edit_user h2 {
-  color:white;
+  color:black;
   opacity:0.9;
   font-size: 30px;
 }
@@ -87,7 +87,7 @@
 }
 
 .form-edit .invalid-feedback {
- color:white;
+ color:black;
 }
 
 .form_forgot .btn {
@@ -104,7 +104,7 @@
 }
 
 .form_forgot h2, .form_signup h2 {
-  color:white;
+  color:black;
 }
 
 .form_signup .btn {
