@@ -1,3 +1,5 @@
+<% logo = ENV['BASE_URL'] + "logo.png" %>
+<% source = user_signed_in? ? current_user.photo.url : logo %>
 <div class="navbar-wagon-right ">
   <div class= "navbar-wagon-brand">
     <%= link_to image_tag("logo.png"), root_path   %>
@@ -13,8 +15,9 @@
   <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
+
         <!-- <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
-        <img src=<%= current_user.photo.url if user_signed_in? %> class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> <!-- mettre ici le code erb pour la photo de profile -->
+        <img class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" src=<%= source %>> <!-- mettre ici le code erb pour la photo de profile -->
         <!-- </div> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "log in", new_user_session_path %></li>
