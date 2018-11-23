@@ -90,6 +90,6 @@ s4 = Spot.create!(description: "I will make you a house that you cant leave", gu
 s4.photo = Rails.root.join("app/assets/images/logofox.jpg").open
 s4.save
 
-s3 = Spot.create!(description: "Opera house", guest_number: 2000, price: 15_000, good: true, image: "opera.jpg", user_id: u3.id, , occupation: "singer")
+s3 = Spot.create!(description: "Opera house", guest_number: 2000, price: 15_000, good: true, image: "opera.jpg", user_id: u3.id, occupation: "singer")
 s3.photo = Rails.root.join("app/assets/images/opera.jpg").open
 s3.save
