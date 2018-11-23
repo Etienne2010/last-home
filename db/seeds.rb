@@ -82,7 +82,7 @@ s1 = Spot.create!(description: "Zen place", guest_number: 100, price: 10_000, go
 s1.photo = Rails.root.join("app/assets/images/zen.jpg").open
 s1.save
 
-s2 = Spot.create!(description: "Space equals to mc2", guest_number: 8, price: 20_000, good: true, image: "mc2.png", user_id: u2.id, , occupation: "physicist")
+s2 = Spot.create!(description: "Space equals to mc2", guest_number: 8, price: 20_000, good: true, image: "mc2.png", user_id: u2.id, occupation: "physicist")
 s2.photo = Rails.root.join("app/assets/images/mc2.png").open
 s2.save
 
