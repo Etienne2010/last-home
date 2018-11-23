@@ -1,6 +1,7 @@
 
   <div class="showcard" style= "background-image: url(<%= @spot.photo.url %>)">
-    <div><img src=<%= @spot.user.avatar %> class="spotavatar"></div>
+
+    <div><img src=<%= @spot.user.photo.url %> class="spotavatar"></div>
 
       <div class="spotname"><%= @spot.user.name %></div>
       <br>
@@ -10,7 +11,7 @@
       <ul>
         <lo><div class="spotdescription"><h2>"<%= @spot.description %>"</h2></div></lo>
    <!--    <div class="spotgood"><%= @spot.good %></div> -->
-      <lo><div class="gestnum"><p> Aviable places :<%= @spot.guest_number %></p><lo></div>
+      <lo><div class="gestnum"><p> Available places :<%= @spot.guest_number %></p><lo></div>
       <lo><div class="price"><h3>Special price $ : <%= @spot.price %></h3></div></lo>
       <br>
       <lo><%= simple_form_for [@spot, @booking] do |f| %>

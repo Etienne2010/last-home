@@ -1,17 +1,12 @@
 <%
   if params['good_or_evil'] == "Good"
-    background_path = image_path("good")
+    background_path = "#{@base_url}good.jpg"
     content_good = "WELCOME TO PARADISE"
     content_text = "There is a place for everyone"
   else
-    background_path = image_path("evil")
+    background_path = "#{@base_url}evil.jpg"
     content_good = "WELCOME TO HELL"
     content_text = "Hurry up there will not be enough room"
-
-    background_path = "#{@base_url}good"
-  # else
-    background_path = "#{@base_url}evil"
-
   end
 %>
 
@@ -38,7 +33,7 @@
             <h2>Occupation : <%= spot.occupation %></h2>
             <p>Price : <%= spot.price %></p>
           </div>
-          <img class="card-user" src="<%= "#{@base_url}#{spot.user.avatar}" %>" alt="Image">
+          <img class="card-user" src=<%= spot.user.photo.url %> alt="Image">
           <%= link_to "toto", spot_path(spot), class: "card-link" %>
         </div>
       </div>
