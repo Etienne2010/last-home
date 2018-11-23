@@ -13,37 +13,37 @@ Spot.destroy_all
 Review.destroy_all
 User.destroy_all
 
-u1 = User.create!(name: "Gandhi", email: "a@a.com", password: "azerty")
+u1 = User.create!(name: "Gandhi", email: "a@a.com", password: "azerty", occupation: "pacifist")
 u1.photo = Rails.root.join("app/assets/images/gandhi.jpg").open
 u1.save
-u2 = User.create!(name: "Albert Einstein", email: "b@a.com", password: "azerty")
+u2 = User.create!(name: "Albert Einstein", email: "b@a.com", password: "azerty", occupation: "physicist")
 u2.photo = Rails.root.join("app/assets/images/einstein.jpg").open
 u2.save
-u3 = User.create!(name: "Pavarotti", avatar: "pavarotti.jpg", email: "c@a.com", password: "azerty")
+u3 = User.create!(name: "Pavarotti", avatar: "pavarotti.jpg", email: "c@a.com", password: "azerty", occupation: "singer")
 u3.photo = Rails.root.join("app/assets/images/pavarotti.jpg").open
 u3.save
 
-u4 = User.create!(name: "Marlon Brando", avatar: "brando.jpg", email: "d@a.com", password: "azerty")
+u4 = User.create!(name: "Marlon Brando", avatar: "brando.jpg", email: "d@a.com", password: "azerty", occupation: "actor")
 u4.photo = Rails.root.join("app/assets/images/brando.jpg").open
 u4.save
 
-u5 = User.create!(name: "Staline", avatar: "stalin.jpg", email: "e@a.com", password: "azerty")
+u5 = User.create!(name: "Staline", avatar: "stalin.jpg", email: "e@a.com", password: "azerty", occupation: "dictator")
 u5.photo = Rails.root.join("app/assets/images/stalin.jpg").open
 u5.save
 
-u6 = User.create!(name: "Klaus Barbie", avatar: "barbie.jpg", email: "f@a.com", password: "azerty")
+u6 = User.create!(name: "Klaus Barbie", avatar: "barbie.jpg", email: "f@a.com", password: "azerty", occupation: "butcher")
 u6.photo = Rails.root.join("app/assets/images/barbie.jpg").open
 u6.save
 
-u7 = User.create!(name: "Amy Winehouse", avatar: "winehouse.jpg", email: "g@a.com", password: "azerty")
+u7 = User.create!(name: "Amy Winehouse", avatar: "winehouse.jpg", email: "g@a.com", password: "azerty", occupation: "junkie")
 u7.photo = Rails.root.join("app/assets/images/winehouse.jpg").open
 u7.save
 
-u8 = User.create!(name: "Charles Ponzi", avatar: "ponzi.jpg", email: "h@a.com", password: "azerty")
+u8 = User.create!(name: "Charles Ponzi", avatar: "ponzi.jpg", email: "h@a.com", password: "azerty", occupation: "con artist")
 u8.photo = Rails.root.join("app/assets/images/ponzi.jpg").open
 u8.save
 
-u9 = User.create!(name: "Margaret Thatcher", avatar: "thatcher.jpg", email: "i@a.com", password: "azerty")
+u9 = User.create!(name: "Margaret Thatcher", avatar: "thatcher.jpg", email: "i@a.com", password: "azerty", occupation: "politician")
 u9.photo = Rails.root.join("app/assets/images/thatcher.jpg").open
 u9.save
 
